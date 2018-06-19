@@ -4,14 +4,24 @@ import Paper from '@material-ui/core/Paper';
 import { withStyles } from "@material-ui/core/styles";
 import Divider from '@material-ui/core/Divider';
 
+import axios from 'axios';
 import {connect} from 'react-redux';
 
 import {fetchCoverLetterContent} from '../../actions/CoverLetterActions';
 
-let COVER_LETTER_TEXT = "";
+const COVER_LETTER_MARGIN = '20%';
 
 const styles = theme => ({
+  root: theme.mixins.gutters({
+    paddingTop: 16,
+    paddingBottom: 16,
+    marginTop: theme.spacing.unit * 3,
 
+  }),
+  resumePaper: {
+    paddingLeft: COVER_LETTER_MARGIN,
+    paddingRight: COVER_LETTER_MARGIN
+  }
 });
 
 const mapStateToProps = store => {
@@ -25,6 +35,13 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+const CoverLetterSection = (section) => {
+  return (
+    <Typography variant="body1" component="p" gutterBottom>
+      {section}
+    </Typography>
+  );
+}
 
 class CoverLetterComponent extends Component {
   constructor(props) {
@@ -33,21 +50,31 @@ class CoverLetterComponent extends Component {
 
   componentDidMount() {
     const {fetchCoverLetterContent} = this.props;
-    fetch('cover-letter-content.txt')
-      .then(response => {
-        let test = 0;
-        response.text();
-      })
-      .then(responseText => fetchCoverLetterContent(responseText));
+    // fetch('https://raw.githubusercontent.com/mjohns39/ResumeWebsite/master/public/cover-letter-content.txt',
+    // {method: 'GET'})
+    //   .then(response => {
+    //     let test = response.body;
+    //     fetchCoverLetterContent(response.body);
+    //   });
+
+    axios.get('https://raw.githubusercontent.com/mjohns39/ResumeWebsite/master/public/cover-letter-content.txt')
+    .then(response => {
+      let test = response.data.split(/[\r\n]+/);
+      fetchCoverLetterContent(response.data.split(/[\r\n]+/))
+    })
+    .catch(error => error);
   }
 
   render() {
-    const {coverLetterContent} = this.props;
+    const {coverLetterContent, classes} = this.props;
     return (
       <React.Fragment>
-        <Typography variant="body1" component="p">
-        {coverLetterContent}
-        </Typography>
+
+        <div className={classes.resumePaper}>
+            <Paper className={classes.root} elevation={4}>
+              {coverLetterContent?coverLetterContent.map(section => CoverLetterSection(section)):""}
+            </Paper>
+        </div>
 
       </React.Fragment>
     );
