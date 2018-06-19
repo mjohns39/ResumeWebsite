@@ -4,7 +4,7 @@ import {createLogger} from 'redux-logger'
 import thunk from 'redux-thunk';
 
 
-import reducer from '../reducers/ResumeReducer';
+import reducer from '../reducers/RootReducer';
 
 const middleware = applyMiddleware(createLogger(), thunk);
 //configureStore(preloadedState)

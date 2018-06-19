@@ -26,7 +26,7 @@ const styles = {
 
 const mapStateToProps = store => {
   return {
-    activeTab: store.activeTab
+    activeTab: store.resumeReducer.activeTab
   }
 }
 const mapDispatchToProps = dispatch => {

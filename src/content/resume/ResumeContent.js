@@ -8,6 +8,8 @@ import {TabContainer} from '../ContentUtil';
 import {Education} from './sections/Education';
 import {ProfessionalCertifications} from './sections/ProfessionalCertifications';
 import {WorkExperience} from './sections/WorkExperience';
+import {Skills} from './sections/Skills';
+import {Interests} from './sections/Interests';
 
 
 const RESUME_MARGIN = '20%';
@@ -46,6 +48,12 @@ class ResumeContentComponent extends Component {
             </Paper>
             <Paper className={classes.root} elevation={4}>
               <WorkExperience/>
+            </Paper>
+            <Paper className={classes.root} elevation={4}>
+              <Skills/>
+            </Paper>
+            <Paper className={classes.root} elevation={4}>
+              <Interests/>
             </Paper>
           </TabContainer>
 

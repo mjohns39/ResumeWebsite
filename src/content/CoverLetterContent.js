@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {TabContainer} from './ContentUtil';
 
+import {CoverLetter} from './coverLetter/CoverLetter';
+
 const mapStateToProps = store => {
   return {
   }
@@ -25,7 +27,9 @@ class CoverLetterContentComponent extends Component {
     const {activeTab, changeActiveTab} = this.props;
     return (
       <React.Fragment>
-        <TabContainer>About Me</TabContainer>
+        <TabContainer>
+          <CoverLetter/>
+        </TabContainer>
       </React.Fragment>
     );
 
