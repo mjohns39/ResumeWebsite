@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { createMuiTheme } from '@material-ui/core/styles';
 
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 import {Provider} from 'react-redux';
@@ -13,29 +10,17 @@ import store from './store/Store';
 import {Header} from './header/Header';
 import {Menu} from './menu/Menu';
 
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: {
-//       light: '#757ce8',
-//       main: '#3f50b5',
-//       dark: '#002884',
-//       contrastText: '#fff',
-//     },
-//     secondary: {
-//       light: '#ff7961',
-//       main: '#f44336',
-//       dark: '#ba000d',
-//       contrastText: '#000',
-//     },
-//   },
-// });
-
-const styles = {
+import {PAPER_MARGIN} from './constants/Constants';
 
 
-};
+const styles = theme => ({
+  paper: {
+    paddingLeft: PAPER_MARGIN,
+    paddingRight: PAPER_MARGIN
+  }
+});
 
-const Resume = () => (
+const Resume = (props) => (
   <React.Fragment>
       <Header/>
       <Menu/>
@@ -43,7 +28,9 @@ const Resume = () => (
 )
 
 class App extends Component {
-
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <Provider store={store}>
@@ -54,12 +41,5 @@ class App extends Component {
   }
 }
 
-
-// App.propTypes = {
-//   classes: PropTypes.object.isRequired,
-//
-// };
-
-// export default withStyles(styles)(App);
 
 export default withStyles(styles)(App);

@@ -11,8 +11,8 @@ import {WorkExperience} from './sections/WorkExperience';
 import {Skills} from './sections/Skills';
 import {Interests} from './sections/Interests';
 
+import {PAPER_MARGIN} from '../../constants/Constants';
 
-const RESUME_MARGIN = '20%';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -22,8 +22,8 @@ const styles = theme => ({
 
   }),
   resumePaper: {
-    paddingLeft: RESUME_MARGIN,
-    paddingRight: RESUME_MARGIN
+    paddingLeft: PAPER_MARGIN,
+    paddingRight: PAPER_MARGIN
   }
 });
 

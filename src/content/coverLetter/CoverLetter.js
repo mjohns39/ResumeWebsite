@@ -9,7 +9,8 @@ import {connect} from 'react-redux';
 
 import {fetchCoverLetterContent} from '../../actions/CoverLetterActions';
 
-const COVER_LETTER_MARGIN = '20%';
+import {PAPER_MARGIN} from '../../constants/Constants';
+
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -19,8 +20,8 @@ const styles = theme => ({
 
   }),
   resumePaper: {
-    paddingLeft: COVER_LETTER_MARGIN,
-    paddingRight: COVER_LETTER_MARGIN
+    paddingLeft: PAPER_MARGIN,
+    paddingRight: PAPER_MARGIN
   }
 });
 
