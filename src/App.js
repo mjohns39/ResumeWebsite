@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import './icons/Icons';
+
+
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -20,7 +23,7 @@ const styles = theme => ({
   }
 });
 
-const Resume = (props) => (
+const Website = (props) => (
   <React.Fragment>
       <Header/>
       <Menu/>
@@ -31,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Resume/>
+        <Website/>
       </Provider>
 
     );

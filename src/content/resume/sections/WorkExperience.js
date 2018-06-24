@@ -159,9 +159,9 @@ class WorkExperienceComponent extends Component {
           Work Experience
         </Typography>
         {WE1Experience(classes)}
-        <Divider gutterBottom/>
+        <Divider/>
         {WE2Experience(classes)}
-        <Divider gutterBottom/>
+        <Divider/>
         {WE3Experience(classes)}
       </React.Fragment>
     );

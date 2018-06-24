@@ -8,9 +8,9 @@ import { withStyles } from "@material-ui/core/styles";
 
 import {changeActiveTab} from '../actions/ResumeActions';
 
-import {ResumeContent} from '../content/resume/ResumeContent';
-import {CoverLetterContent} from '../content/coverLetter/CoverLetterContent';
-
+import {Resume} from '../content/resume/Resume';
+import {CoverLetter} from '../content/coverLetter/CoverLetter';
+import {About} from '../content/about/About';
 
 const styles = {
     root: {
@@ -44,8 +44,8 @@ class MenuComponent extends Component {
 
         </div>
 
-        {activeTab === 0?<ResumeContent/>:""}
-        {activeTab === 1?<CoverLetterContent/>:""}
+        {activeTab === 0?<Resume/>:""}
+        {activeTab === 1?<CoverLetter/>:""}
       </React.Fragment>
     );
 

@@ -10,18 +10,13 @@ import {fetchCoverLetterContent} from '../../actions/CoverLetterActions';
 
 import {PAPER_MARGIN} from '../../constants/Constants';
 
-
 const styles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    marginTop: theme.spacing.unit * 3,
+    margin: theme.spacing.unit * 3,
 
   }),
-  resumePaper: {
-    paddingLeft: PAPER_MARGIN,
-    paddingRight: PAPER_MARGIN
-  }
 });
 
 const mapStateToProps = store => {
@@ -35,9 +30,9 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const CoverLetterSection = (section) => {
+const CoverLetterSection = (section, key) => {
   return (
-    <Typography variant="body1" component="p" gutterBottom>
+    <Typography key={key} variant="body1" component="p" gutterBottom>
       {section}
     </Typography>
   );
@@ -57,13 +52,9 @@ class CoverLetterComponent extends Component {
     const {coverLetterContent, classes} = this.props;
     return (
       <React.Fragment>
-
-        <div className={classes.resumePaper}>
-            <Paper className={classes.root} elevation={4}>
-              {coverLetterContent?coverLetterContent.map(section => CoverLetterSection(section)):""}
-            </Paper>
-        </div>
-
+        <Paper className={classes.root} elevation={4}>
+          {coverLetterContent?coverLetterContent.map((section, key) => CoverLetterSection(section, key)):""}
+        </Paper>
       </React.Fragment>
     );
 

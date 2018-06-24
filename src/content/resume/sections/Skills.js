@@ -27,7 +27,7 @@ class SkillsComponent extends Component {
         <Typography variant="body1" component="p" gutterBottom>
           {ABOVE_PROFICIENT_SKILLS}
         </Typography>
-        <Divider gutterBottom/>
+        <Divider/>
 
         <Typography variant="subheading" component="p" gutterBottom>
           <i>Proficient</i>
@@ -35,7 +35,7 @@ class SkillsComponent extends Component {
         <Typography variant="body1" component="p" gutterBottom>
           {PROFICIENT_SKILLS}
         </Typography>
-        <Divider gutterBottom/>
+        <Divider/>
 
         <Typography variant="subheading" component="p" gutterBottom>
           <i>Familiar</i>
@@ -43,7 +43,7 @@ class SkillsComponent extends Component {
         <Typography variant="body1" component="p" gutterBottom>
           {FAMILIAR_SKILLS}
         </Typography>
-        <Divider gutterBottom/>
+        <Divider/>
 
         <Typography variant="subheading" component="p" gutterBottom>
           <i>Exposure</i>
