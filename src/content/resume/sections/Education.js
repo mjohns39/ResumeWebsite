@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import { withStyles } from "@material-ui/core/styles";
 
-import {connect} from 'react-redux';
 
 
 
@@ -21,9 +19,6 @@ const styles = theme => ({
 
 
 class EducationComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const {classes} = this.props;
     return (

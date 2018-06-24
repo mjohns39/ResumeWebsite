@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from "@material-ui/core/styles";
-import Divider from '@material-ui/core/Divider';
 
 import axios from 'axios';
 import {connect} from 'react-redux';
@@ -45,24 +44,12 @@ const CoverLetterSection = (section) => {
 }
 
 class CoverLetterComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     const {fetchCoverLetterContent} = this.props;
-    // fetch('https://raw.githubusercontent.com/mjohns39/ResumeWebsite/master/public/cover-letter-content.txt',
-    // {method: 'GET'})
-    //   .then(response => {
-    //     let test = response.body;
-    //     fetchCoverLetterContent(response.body);
-    //   });
 
-    axios.get('https://raw.githubusercontent.com/mjohns39/ResumeWebsite/master/public/cover-letter-content.txt')
-    .then(response => {
-      let test = response.data.split(/[\r\n]+/);
-      fetchCoverLetterContent(response.data.split(/[\r\n]+/))
-    })
+    axios.get('https://raw.githubusercontent.com/mjohns39/ResumeWebsite/603b55f6c68e46a9ee9e777fb96ba458146bb6b3/public/cover-letter-content.txt')
+    .then(response => fetchCoverLetterContent(response.data.split(/[\r\n]+/)))
     .catch(error => error);
   }
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
 import {connect} from 'react-redux';
 import { withStyles } from "@material-ui/core/styles";
 
@@ -10,13 +9,8 @@ import { withStyles } from "@material-ui/core/styles";
 import {changeActiveTab} from '../actions/ResumeActions';
 
 import {ResumeContent} from '../content/resume/ResumeContent';
-import {CoverLetterContent} from '../content/CoverLetterContent';
+import {CoverLetterContent} from '../content/coverLetter/CoverLetterContent';
 
-// const styles = theme => ({
-//   root: {
-//     maxWidth: '100%'
-//   }
-// });
 
 const styles = {
     root: {
@@ -36,9 +30,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 class MenuComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const {activeTab, changeActiveTab, classes} = this.props;
     return (

@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import { withStyles } from "@material-ui/core/styles";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import LensIcon from '@material-ui/icons/Lens';
 import Divider from '@material-ui/core/Divider';
 
 
 
 
-import {connect} from 'react-redux';
 
 const WE1_DR = "Work on JIRA’s from a backlog.  Develop new apps with Java 8, Spring Boot, Angular 5, and React.";
 const WE1_SA1 = "Found CSRF vulnerability the Cloud Architecture at this organization.  Fixed CSRF vulnerability by implementing stateless/RESTful Auth using Kerberos Authentication and OAuth2 Authorization with JWT access tokens and Spring Security, behind a Zuul Proxy Gateway created with Spring Cloud and with a Spring Cloud Config Server.";
 const WE1_SA2 = "Recreated complete legacy app, written in Java 7/AngularJS from ground up using Java 8, Spring Boot, Angular 5 and PrimeNG.";
-const WE1_SA3 = "Taught entire department how to perform advance techniques with Spring Framework, Angular TS and React.";
+// const WE1_SA3 = "Taught entire department how to perform advance techniques with Spring Framework, Angular TS and React.";
 
 const WE2_DR = "Develop Microservices using Java 8, Spring Boot and Pivotal Cloud, DIT test code, review peer code, Daily Standup, groom User Stories for backlog, identify dependencies, pull user stories from backlog and write tasks for user stories."
 const WE2_SA1 = "Implemented code for Fraud APIs for QuickLock service.  Trained team members on Spring Boot Microservice development and integration.  Integrated QuickLock service with UI calls.";
@@ -26,14 +19,21 @@ const WE3_DR = "Analyze existing report code in WebFocus, write PL/SQL procedure
 const WE3_SA1 = "Identified/Corrected 10 reports with production defects, two of which could have resulted in legal action.  ";
 const WE3_SA2 = WE3_SA1 + "Single handily converted 26 of the 40 reports thus delivering project four months ahead of schedule.";
 
-const bulletPoint = '&#x25CF;';
+// const bulletPoint = '&#x25CF;';
 
 const styles = theme => ({
-  experience: {
+  experienceSummary: {
     display: 'flex',
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    // alignItems: 'flex-start'
+  },
+  experienceDetail: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-left',
   },
   divider: {
     paddingLeft: 16
@@ -43,8 +43,8 @@ const styles = theme => ({
 
 const WE1Experience = (classes) => {
   return (
-    <div>
-      <div className={classes.experience}>
+    <div className={classes.root}>
+      <div className={classes.experienceSummary}>
         <Typography variant="subheading" component="p" gutterBottom>
           Financial Institution Company Wealth and Investment (Contract)
         </Typography>
@@ -61,18 +61,18 @@ const WE1Experience = (classes) => {
       <Typography variant="body1" component="p" gutterBottom>
         <i>Significant Accomplishments:&nbsp;&nbsp;</i>
       </Typography>
-      <div className={classes.experience}>
+      <div className={classes.experienceDetail}>
         <Typography variant="body1" component="p" gutterBottom>
-          &emsp; &emsp; &#x25CF;
+          &#x25CF;
         </Typography>
         <div className={classes.divider}></div>
         <Typography variant="body1" component="p" gutterBottom>
           {WE1_SA1}
         </Typography>
       </div>
-      <div className={classes.experience}>
-        <Typography variant="body1" component="p" gutterBottom>
-          &emsp; &emsp; &#x25CF;
+      <div className={classes.experienceDetail}>
+        <Typography variant="body1" align="left" gutterBottom>
+          &#x25CF;
         </Typography>
         <div className={classes.divider}></div>
         <Typography variant="body1" component="p" gutterBottom>
@@ -86,7 +86,7 @@ const WE1Experience = (classes) => {
 const WE2Experience = (classes) => {
   return (
     <div>
-      <div className={classes.experience}>
+      <div className={classes.experienceSummary}>
         <Typography variant="subheading" component="p" gutterBottom>
           Financial Institution Company Consumer Bank (Consultant)
         </Typography>
@@ -103,9 +103,9 @@ const WE2Experience = (classes) => {
       <Typography variant="body1" component="p" gutterBottom>
         <i>Significant Accomplishments:&nbsp;&nbsp;</i>
       </Typography>
-      <div className={classes.experience}>
+      <div className={classes.experienceDetail}>
         <Typography variant="body1" component="p" gutterBottom>
-          &emsp; &emsp; &#x25CF;
+          &#x25CF;
         </Typography>
         <div className={classes.divider}></div>
         <Typography variant="body1" component="p" gutterBottom>
@@ -119,7 +119,7 @@ const WE2Experience = (classes) => {
 const WE3Experience = (classes) => {
   return (
     <div>
-      <div className={classes.experience}>
+      <div className={classes.experienceSummary}>
         <Typography variant="subheading" component="p" gutterBottom>
           Financial Institution Company Institutional Client Group (Consultant)
         </Typography>
@@ -136,9 +136,9 @@ const WE3Experience = (classes) => {
       <Typography variant="body1" component="p" gutterBottom>
         <i>Significant Accomplishments:&nbsp;&nbsp;</i>
       </Typography>
-      <div className={classes.experience}>
+      <div className={classes.experienceDetail}>
         <Typography variant="body1" component="p" gutterBottom>
-          &emsp; &emsp; &#x25CF;
+          &#x25CF;
         </Typography>
         <div className={classes.divider}></div>
         <Typography variant="body1" component="p" gutterBottom>
@@ -149,28 +149,8 @@ const WE3Experience = (classes) => {
   );
 }
 
-const WVUExperience = (classes) => {
-  return (
-    <div>
-      <div className={classes.experience}>
-        <Typography variant="subheading" component="p" gutterBottom>
-          West Virginia University (Tutor/TA)
-        </Typography>
-        <Typography variant="subheading" component="p" align="right" gutterBottom>
-          <i>September 2012 - May 2014</i>
-        </Typography>
-      </div>
-      <Typography variant="body1" component="p" gutterBottom>
-        TA for computer programming course (IE 331) under Dr. Rashpal Ahluwalia.
-      </Typography>
-    </div>
-  );
-}
 
 class WorkExperienceComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const {classes} = this.props;
     return (

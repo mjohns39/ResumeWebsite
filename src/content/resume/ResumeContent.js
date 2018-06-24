@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from "@material-ui/core/styles";
 
-import {connect} from 'react-redux';
 import {TabContainer} from '../ContentUtil';
 import {Education} from './sections/Education';
 import {ProfessionalCertifications} from './sections/ProfessionalCertifications';
@@ -31,11 +29,8 @@ const styles = theme => ({
 
 
 class ResumeContentComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    const {activeTab, changeActiveTab, classes} = this.props;
+    const {classes} = this.props;
     return (
       <React.Fragment >
         <div className={classes.resumePaper}>
