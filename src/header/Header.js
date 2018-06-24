@@ -8,10 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
-
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    paddingTop: 16,
+    paddingBottom: 16,
   },
   flex: {
     flex: 1,
@@ -25,9 +26,14 @@ class HeaderComponent extends Component {
       <React.Fragment>
         <AppBar className={classes.root} position="static">
           <Toolbar>
-            <Typography variant="title" color="inherit" className={classes.flex}>
-              Michael Johnson:  Software Engineer
-            </Typography>
+            <div className={classes.flex}>
+              <Typography variant="display1" color="inherit" className={classes.flex}>
+                Michael Johnson
+              </Typography>
+              <Typography variant="title" color="inherit" className={classes.flex}>
+                Software Engineer
+              </Typography>
+            </div>
             <a href="https://www.linkedin.com/in/mljohns89/">
               <IconButton color="inherit">
                 <FontAwesomeIcon icon={['fab', 'linkedin']} color='white'/>
