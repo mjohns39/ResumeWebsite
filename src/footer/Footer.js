@@ -12,7 +12,7 @@ const styles = {
   },
 };
 
-class HeaderComponent extends Component {
+class FooterComponent extends Component {
   render() {
     const {classes} = this.props;
     return (
@@ -29,4 +29,4 @@ class HeaderComponent extends Component {
   }
 }
 
-export const Header = withStyles(styles)(HeaderComponent);
+export const Footer = withStyles(styles)(FooterComponent);

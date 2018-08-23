@@ -1,12 +1,14 @@
-export const PAPER_MARGIN = '0%';
+const API_URL_LOCAL = "http://localhost:9000";
+const API_URL_PROD = "https://api.michaeljohnson.xyz";
 
-// export const PAPER_MARGIN = calcPaperMargin();
-
-//width on MacBookPro 13in = 1440
-function calcPaperMargin() {
-  const width = window.innerWidth;
-
-  if(width<=500) return '5%';
-  else if(width>500 && width<=900) return '10%';
-  else return '20%'
+function getApiUrl() {
+  if(window.location.hostname === "localhost") {
+    return API_URL_LOCAL;
+  } else {
+    return API_URL_PROD;
+  }
 }
+
+
+export const PAPER_MARGIN = '0%';
+export const API_URL = getApiUrl();

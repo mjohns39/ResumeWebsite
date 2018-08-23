@@ -26,6 +26,7 @@ import {Menu} from './menu/Menu';
 import {PAPER_MARGIN} from './constants/Constants';
 
 
+
 const theme = createMuiTheme({
   typography: {
     fontFamily: "Montserrat",
@@ -41,6 +42,17 @@ const styles = theme => ({
   }
 });
 
+// const mapStateToProps = store => {
+//   return {
+//     resumeContent: store.resumeReducer.resumeContent
+//   }
+// }
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchCoverLetterContent: content => dispatch(fetchCoverLetterContent(content))
+//   }
+// }
+
 const Website = (props) => (
   <React.Fragment>
     <MuiThemeProvider theme={theme}>
@@ -51,6 +63,8 @@ const Website = (props) => (
 )
 
 class App extends Component {
+
+
   render() {
     return (
       <Provider store={store}>

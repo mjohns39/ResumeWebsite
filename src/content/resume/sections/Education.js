@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from "@material-ui/core/styles";
+import {connect} from 'react-redux';
 
+// import {API_URL} from "../../../constants/Constants";
 
 
 
@@ -15,7 +17,15 @@ const styles = theme => ({
 
 });
 
-
+const mapStateToProps = store => {
+  return {
+    resumeContent: store.resumeReducer.resumeContent
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+  }
+}
 
 
 class EducationComponent extends Component {
@@ -51,4 +61,5 @@ class EducationComponent extends Component {
   }
 }
 
-export const Education = withStyles(styles)(EducationComponent);
+// export const Education = withStyles(styles)(EducationComponent);
+export const Education = withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(EducationComponent));
