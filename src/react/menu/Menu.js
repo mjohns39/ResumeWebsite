@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import { withStyles } from "@material-ui/core/styles";
 
 
-import {changeActiveTab} from '../actions/ResumeActions';
+import {changeActiveTab} from '../../redux/actions/ResumeActions';
 
 import {Resume} from '../content/resume/Resume';
 import {CoverLetter} from '../content/coverLetter/CoverLetter';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import './icons/Icons';
+import './react/icons/Icons';
 
 // import 'typeface-roboto';
 import 'typeface-montserrat';
@@ -18,12 +18,12 @@ import { withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/
 
 import {Provider} from 'react-redux';
 
-import store from './store/Store';
+import store from './redux/store/Store';
 
-import {Header} from './header/Header';
-import {Menu} from './menu/Menu';
+import {Header} from './react/header/Header';
+import {Menu} from './react/menu/Menu';
 
-import {PAPER_MARGIN} from './constants/Constants';
+import {PAPER_MARGIN} from './react/constants/Constants';
 
 
 const theme = createMuiTheme({

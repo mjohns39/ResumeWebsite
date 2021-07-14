@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 import axios from 'axios';
 import {connect} from 'react-redux';
 
-import {fetchCoverLetterContent} from '../../actions/CoverLetterActions';
+import {fetchCoverLetterContent} from '../../../redux/actions/CoverLetterActions';
 
 import {PAPER_MARGIN} from '../../constants/Constants';
 
